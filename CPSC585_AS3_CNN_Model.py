@@ -262,6 +262,9 @@ is_MLP = False
 train_loss=train_ANN_model(num_epochs, train_dataloader, device, CUDA_enabled, is_MLP, CNN_model, loss_func_cnn, CNN_optimizer)
 print("............Testing CNN model................")
 predicted_digits=test_ANN_model(device, CUDA_enabled, is_MLP, CNN_model, test_dataloader)
+
+torch.save(CNN_model.state_dict(), "mnist_cnn.pt")
+
 #print("> Predicted digits by CNN model")
 #print(predicted_digits)
 
