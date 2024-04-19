@@ -105,7 +105,6 @@ def train_ANN_model(num_epochs, training_data, device, CUDA_enabled, is_MLP, ANN
             #print("Loss: ", loss)
             #print("Loss item: ", loss.item())
             train_losses.append(loss.item())
-            # PyTorchs Autograd engine (automatic differential (chain rule) package)
             loss.backward() # calculating gradients backward using Autograd
             optimizer.step() # updating all parameters after every iteration through backpropagation
 
